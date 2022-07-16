@@ -1,0 +1,1157 @@
+{
+  "output": [
+    {
+      "inferences": [
+        {
+          "dataset_id": "62b9a5907a70f00001e01a48",
+          "ignore": false,
+          "id": "leni_62a98c267a70f00001d910a4_0fe2f3571b9940df87e12e9d91a9e368_0",
+          "context_tokens": [
+            {
+              "variables": [
+                {
+                  "key": "Sales",
+                  "selected": true
+                }
+              ],
+              "ignore": false,
+              "token": "sales"
+            },
+            {
+              "variables": [
+                {
+                  "key": "Order Date",
+                  "selected": true
+                }
+              ],
+              "trend": false,
+              "ignore": false,
+              "token": "default time"
+            }
+          ],
+          "dataset": "ecom data",
+          "last_modified": "2022-07-08 12:20:45",
+          "version": 2
+        }
+      ],
+      "subdomain": "62b9a5907a70f00001e01a48",
+      "sub-domain description": ""
+    }
+  ],
+  "status_code": "200",
+  "data": [
+    {
+      "xai": "{\"xai\":{\"narratives\":[{\"html\":{\"header\":\"<span class = \\\"lym-story-d\\\">INPUT DATA<\\/span>\",\"body\":[\" Data has <span class = \\\"lym-story-v\\\">2<\\/span> Hierarchies and <span class = \\\"lym-story-v\\\">6<\\/span> Dimensions.\",\"There are <span class = \\\"lym-story-v\\\">21<\\/span> levels analysed for the contribution to change in <span class = \\\"lym-story-v\\\">Sales<\\/span> over the period <span class = \\\"lym-story-d\\\">December 2019<\\/span> as compared to <span class = \\\"lym-story-d\\\">November 2019<\\/span>.\"]},\"story\":{\"header\":\"INPUT DATA\",\"body\":[\" Data has 2 Hierarchies and 6 Dimensions.\",\"There are 21 levels analysed for the contribution to change in Sales over the period December 2019 as compared to November 2019.\"]}},{\"html\":{\"header\":\"<span class = \\\"lym-story-d\\\">MODEL APPLIED<\\/span>\",\"body\":[\"To get the key focus areas,a deterministic mathematical algorithm is applied.\",\"The algorithm calculates the contribution to the change in the <span class = \\\"lym-story-v\\\">Sales<\\/span> by multiplying the share of each value to the overall measure with the change in the measure for each value. All levels showing <span class = \\\"lym-story-v\\\">20%<\\/span> or more contribution to the overall change is considered for further analysis.\"]},\"story\":{\"header\":\"MODEL APPLIED\",\"body\":[\"To get the key focus areas,a deterministic mathematical algorithm is applied.\",\"The algorithm calculates the contribution to the change in the Sales by multiplying the share of each value to the overall measure with the change in the measure for each value. All levels showing 20% or more contribution to the overall change is considered for further analysis.\"]}},{\"html\":{\"header\":\"<span class = \\\"lym-story-d\\\">MODEL PERFORMANCE<\\/span>\",\"body\":[\"Since the model is deterministic in nature, there is no variability in performance. The results of the model are always mathematically accurate\"]},\"story\":{\"header\":\"MODEL PERFORMANCE\",\"body\":[\"Since the model is deterministic in nature, there is no variability in performance. The results of the model are always mathematically accurate\"]}},{\"html\":{\"header\":\"<span class = \\\"lym-story-d\\\">MODEL INTERPRETATION<\\/span>\",\"body\":[[{\"sub_header\":\"<span class = \\\"lym-story-sub\\\">Contribution to overall change<\\/span>\"},[\"A combination of contribution to overall and the percentage change vs past period in their respective <span class = \\\"lym-story-v\\\">Sales<\\/span> indicates the contribution of each of the levels to the overall change.The top levels by their contribution to the overall change are as follows\",{\"hyperlink\":\"VIEW CONTRIBUTION TO OVERALL CHANGE\",\"header\":\"Contribution to overall change\",\"content\":[{\"output\":[{\"d1\":[\"Medium\"],\"d2\":\"-854.01K\",\"d3\":\"65.40\"},{\"d1\":[\"Technology\"],\"d2\":\"-614.50K\",\"d3\":\"47.06\"},{\"d1\":[\"LATAM\"],\"d2\":\"-543.17K\",\"d3\":\"41.60\"},{\"d1\":[\"LATAM\",\"Medium\"],\"d2\":\"-435.29K\",\"d3\":\"33.34\"},{\"d1\":[\"Corporate\",\"Technology\"],\"d2\":\"-392.06K\",\"d3\":\"30.02\"}],\"applied_variables\":[{\"label\":\"variable\",\"type\":\"dimension\",\"data_key\":\"d1\",\"key\":\"VALUES\"},{\"label\":\"change_vs_past\",\"type\":\"dimension\",\"data_key\":\"d2\",\"key\":\"CHANGE VS PAST PERIOD\"},{\"label\":\"score\",\"type\":\"dimension\",\"data_key\":\"d3\",\"key\":\"% CONTRIBUTION TO OVERALL CHANGE\"}],\"chart\":{\"title\":\"\",\"type\":\"table\"}}]}]],[{\"sub_header\":\"<span class = \\\"lym-story-sub\\\">Percentage change vs past period<\\/span>\"},[\"For each of the levels, a change in their respective <span class = \\\"lym-story-v\\\">Sales<\\/span> indicates the partial impact they have on driving the change.The top levels by their percentage change vs past period are as follows\",{\"hyperlink\":\"VIEW PERCENTAGE CHANGE VS PAST PERIOD\",\"header\":\"Percentage change vs past period\",\"content\":[{\"output\":[{\"d1\":[\"Corporate\",\"South\",\"Technology\",\"US\"],\"d2\":\"-96.95\"},{\"d1\":[\"Corporate\",\"Technology\",\"United States\"],\"d2\":\"-92.32\"},{\"d1\":[\"Corporate\",\"South\",\"Technology\"],\"d2\":\"-83.82\"},{\"d1\":[\"South\",\"Technology\"],\"d2\":\"-59.45\"},{\"d1\":[\"Copiers\",\"LATAM\",\"Medium\",\"Technology\"],\"d2\":\"-53.06\"}],\"applied_variables\":[{\"label\":\"variable\",\"type\":\"dimension\",\"data_key\":\"d1\",\"key\":\"VALUES\"},{\"label\":\"score\",\"type\":\"dimension\",\"data_key\":\"d2\",\"key\":\"% CHANGE VS PAST PERIOD\"}],\"chart\":{\"title\":\"\",\"type\":\"table\"}}]}]],[{\"sub_header\":\"<span class = \\\"lym-story-sub\\\">Share Contribution<\\/span>\"},[\"For each of the levels, a share contribution of the <span class = \\\"lym-story-v\\\">Sales<\\/span> indicates the partial impact they have on driving the change.The top levels by their contribution to overall value of <span class = \\\"lym-story-v\\\">Sales<\\/span> are as follows\",{\"hyperlink\":\"VIEW SHARE CONTRIBUTION\",\"header\":\"Share Contribution\",\"content\":[{\"output\":[{\"d1\":[\"Medium\"],\"d2\":\"59.70\"},{\"d1\":[\"Technology\"],\"d2\":\"37.17\"},{\"d1\":[\"Medium\",\"Technology\"],\"d2\":\"22.61\"},{\"d1\":[\"LATAM\"],\"d2\":\"15.04\"},{\"d1\":[\"Corporate\",\"Technology\"],\"d2\":\"10.22\"}],\"applied_variables\":[{\"label\":\"variable\",\"type\":\"dimension\",\"data_key\":\"d1\",\"key\":\"VALUES\"},{\"label\":\"score\",\"type\":\"dimension\",\"data_key\":\"d2\",\"key\":\"SHARE CONTRIBUTION\"}],\"chart\":{\"title\":\"\",\"type\":\"table\"}}]}]]]},\"story\":{\"header\":\"MODEL INTERPRETATION\",\"body\":[[{\"sub_header\":\"Contribution to overall change\"},[\"A combination of contribution to overall and the percentage change vs past period in their respective Sales indicates the contribution of each of the levels to the overall change.The top levels by their contribution to the overall change are as follows\",{\"hyperlink\":\"VIEW CONTRIBUTION TO OVERALL CHANGE\",\"header\":\"Contribution to overall change\",\"content\":[{\"output\":[{\"d1\":[\"Medium\"],\"d2\":\"-854.01K\",\"d3\":\"65.40\"},{\"d1\":[\"Technology\"],\"d2\":\"-614.50K\",\"d3\":\"47.06\"},{\"d1\":[\"LATAM\"],\"d2\":\"-543.17K\",\"d3\":\"41.60\"},{\"d1\":[\"LATAM\",\"Medium\"],\"d2\":\"-435.29K\",\"d3\":\"33.34\"},{\"d1\":[\"Corporate\",\"Technology\"],\"d2\":\"-392.06K\",\"d3\":\"30.02\"}],\"applied_variables\":[{\"label\":\"variable\",\"type\":\"dimension\",\"data_key\":\"d1\",\"key\":\"VALUES\"},{\"label\":\"change_vs_past\",\"type\":\"dimension\",\"data_key\":\"d2\",\"key\":\"CHANGE VS PAST PERIOD\"},{\"label\":\"score\",\"type\":\"dimension\",\"data_key\":\"d3\",\"key\":\"% CONTRIBUTION TO OVERALL CHANGE\"}],\"chart\":{\"title\":\"\",\"type\":\"table\"}}]}]],[{\"sub_header\":\"Percentage change vs past period\"},[\"For each of the levels, a change in their respective Sales indicates the partial impact they have on driving the change.The top levels by their percentage change vs past period are as follows\",{\"hyperlink\":\"VIEW PERCENTAGE CHANGE VS PAST PERIOD\",\"header\":\"Percentage change vs past period\",\"content\":[{\"output\":[{\"d1\":[\"Corporate\",\"South\",\"Technology\",\"US\"],\"d2\":\"-96.95\"},{\"d1\":[\"Corporate\",\"Technology\",\"United States\"],\"d2\":\"-92.32\"},{\"d1\":[\"Corporate\",\"South\",\"Technology\"],\"d2\":\"-83.82\"},{\"d1\":[\"South\",\"Technology\"],\"d2\":\"-59.45\"},{\"d1\":[\"Copiers\",\"LATAM\",\"Medium\",\"Technology\"],\"d2\":\"-53.06\"}],\"applied_variables\":[{\"label\":\"variable\",\"type\":\"dimension\",\"data_key\":\"d1\",\"key\":\"VALUES\"},{\"label\":\"score\",\"type\":\"dimension\",\"data_key\":\"d2\",\"key\":\"% CHANGE VS PAST PERIOD\"}],\"chart\":{\"title\":\"\",\"type\":\"table\"}}]}]],[{\"sub_header\":\"Share Contribution\"},[\"For each of the levels, a share contribution of the Sales indicates the partial impact they have on driving the change.The top levels by their contribution to overall value of Sales are as follows\",{\"hyperlink\":\"VIEW SHARE CONTRIBUTION\",\"header\":\"Share Contribution\",\"content\":[{\"output\":[{\"d1\":[\"Medium\"],\"d2\":\"59.70\"},{\"d1\":[\"Technology\"],\"d2\":\"37.17\"},{\"d1\":[\"Medium\",\"Technology\"],\"d2\":\"22.61\"},{\"d1\":[\"LATAM\"],\"d2\":\"15.04\"},{\"d1\":[\"Corporate\",\"Technology\"],\"d2\":\"10.22\"}],\"applied_variables\":[{\"label\":\"variable\",\"type\":\"dimension\",\"data_key\":\"d1\",\"key\":\"VALUES\"},{\"label\":\"score\",\"type\":\"dimension\",\"data_key\":\"d2\",\"key\":\"SHARE CONTRIBUTION\"}],\"chart\":{\"title\":\"\",\"type\":\"table\"}}]}]]]}},{\"html\":{\"header\":\"<span class = \\\"lym-story-d\\\">MODEL RELIABILITY<\\/span>\",\"body\":[\"Since the model is deterministic in nature, there is no variability in the reliability of the model. The results of the model are always mathematically accurate.\"]},\"story\":{\"header\":\"MODEL RELIABILITY\",\"body\":[\"Since the model is deterministic in nature, there is no variability in the reliability of the model. The results of the model are always mathematically accurate.\"]}}]},\"status_code\":200,\"type\":\"normal\",\"status_txt\":\"LXAI Why Deep Dive Output Generation Success.\"}",
+      "comments": [],
+      "inference": {
+        "dataset_id": "62b9a5907a70f00001e01a48",
+        "ignore": false,
+        "id": "leni_62a98c267a70f00001d910a4_0fe2f3571b9940df87e12e9d91a9e368_0",
+        "context_tokens": [
+          {
+            "variables": [
+              {
+                "key": "Sales",
+                "selected": true
+              }
+            ],
+            "ignore": false,
+            "token": "sales"
+          },
+          {
+            "variables": [
+              {
+                "key": "Order Date",
+                "selected": true
+              }
+            ],
+            "trend": false,
+            "ignore": false,
+            "token": "default time"
+          }
+        ],
+        "dataset": "ecom data",
+        "last_modified": "2022-07-08 12:20:45",
+        "version": 2
+      },
+      "question": "why has sales changed",
+      "simulation": [],
+      "narrative": [
+        {
+          "format": "content",
+          "main": "<div class=\"lym-story-output\"><span class = \"lym-story-v\">Sales</span> witnessed a drop of <span class = \"lym-story-v\">14</span><span class = \"lym-story-v\">%</span><span class = \"lym-story-v\"> (1.31M)</span> in <span class = \"lym-story-v\">December 2019</span> over <span class = \"lym-story-v\">November 2019</span>. This change is driven by:</div>",
+          "body": [
+            {
+              "format": "content",
+              "main": "Focus areas from <span class = \"lym-story-v\">Order Priority</span>",
+              "body": [
+                {
+                  "format": "list",
+                  "main": "A delta of <span class = \"lym-story-v\">854.01K</span> within <span class = \"lym-story-v\">Medium</span> has contributed to <span class = \"lym-story-v\">65</span><span class = \"lym-story-d\">%</span> to the overall decrease in <span class = \"lym-story-v\">Sales</span>.",
+                  "body": [
+                    {
+                      "format": "content",
+                      "main": "In <span class = \"lym-story-v\">Market</span>",
+                      "body": [
+                        {
+                          "format": "list",
+                          "main": "<span class = \"lym-story-v\">LATAM</span> witnessed a drop of <span class = \"lym-story-v\">41</span><span class = \"lym-story-v\">%</span>, an impact of <span class = \"lym-story-v\">33</span><span class = \"lym-story-d\">%</span> on <span class = \"lym-story-v\">Sales</span>.",
+                          "body": [
+                            {
+                              "format": "content",
+                              "main": "",
+                              "body": [
+                                {
+                                  "format": "list",
+                                  "main": "",
+                                  "body": [
+                                    {
+                                      "format": "content",
+                                      "main": "",
+                                      "body": [
+                                        {
+                                          "format": "list",
+                                          "main": "",
+                                          "full": "A drop of <span class = \"lym-story-v\">53</span><span class = \"lym-story-v\">%</span><span class = \"lym-story-v\"> (132.36K)</span>, is coming from <span class = \"lym-story-v\">Copiers</span> bringing the current value to <span class = \"lym-story-v\">117.10K</span><span class = \"lym-story-v\"></span>. It contributes <span class = \"lym-story-v\">10</span><span class = \"lym-story-d\">%</span> to the overall change."
+                                        }
+                                      ],
+                                      "full": "Deep diving into <span class = \"lym-story-v\">Market</span>"
+                                    }
+                                  ],
+                                  "full": "A drop of <span class = \"lym-story-v\">48</span><span class = \"lym-story-v\">%</span><span class = \"lym-story-v\"> (209.35K)</span> brought down <span class = \"lym-story-v\">Technology</span> to <span class = \"lym-story-v\">226.31K</span><span class = \"lym-story-v\"></span>. The contribution of <span class = \"lym-story-v\">Technology</span> to the overall change was noted to be <span class = \"lym-story-v\">16</span><span class = \"lym-story-d\">%</span>."
+                                }
+                              ],
+                              "full": "Drilling down to <span class = \"lym-story-v\">Market</span>"
+                            }
+                          ],
+                          "full": "<span class = \"lym-story-v\">LATAM</span> witnessed a drop of <span class = \"lym-story-v\">41</span><span class = \"lym-story-v\">%</span>, an impact of <span class = \"lym-story-v\">33</span><span class = \"lym-story-d\">%</span> on <span class = \"lym-story-v\">Sales</span>."
+                        }
+                      ],
+                      "full": "In <span class = \"lym-story-v\">Market</span>"
+                    },
+                    {
+                      "format": "content",
+                      "main": "Drilling down to <span class = \"lym-story-v\">Category</span>",
+                      "body": [
+                        {
+                          "format": "list",
+                          "main": "A drop of <span class = \"lym-story-v\">16</span><span class = \"lym-story-v\">%</span><span class = \"lym-story-v\"> (331.52K)</span> brought down <span class = \"lym-story-v\">Technology</span> to <span class = \"lym-story-v\">1.75M</span><span class = \"lym-story-v\"></span>. The contribution of <span class = \"lym-story-v\">Technology</span> to the overall change was noted to be <span class = \"lym-story-v\">25</span><span class = \"lym-story-d\">%</span>.",
+                          "full": "A drop of <span class = \"lym-story-v\">16</span><span class = \"lym-story-v\">%</span><span class = \"lym-story-v\"> (331.52K)</span> brought down <span class = \"lym-story-v\">Technology</span> to <span class = \"lym-story-v\">1.75M</span><span class = \"lym-story-v\"></span>. The contribution of <span class = \"lym-story-v\">Technology</span> to the overall change was noted to be <span class = \"lym-story-v\">25</span><span class = \"lym-story-d\">%</span>."
+                        }
+                      ],
+                      "full": "Drilling down to <span class = \"lym-story-v\">Category</span>"
+                    },
+                    {
+                      "format": "content",
+                      "main": "",
+                      "body": [],
+                      "full": ""
+                    }
+                  ],
+                  "full": "A delta of <span class = \"lym-story-v\">854.01K</span> within <span class = \"lym-story-v\">Medium</span> has contributed to <span class = \"lym-story-v\">65</span><span class = \"lym-story-d\">%</span> to the overall decrease in <span class = \"lym-story-v\">Sales</span>."
+                }
+              ],
+              "full": "Focus areas from <span class = \"lym-story-v\">Order Priority</span>"
+            },
+            {
+              "format": "content",
+              "main": "Focus areas from <span class = \"lym-story-v\">Category</span>",
+              "body": [
+                {
+                  "format": "list",
+                  "main": "<span class = \"lym-story-v\">Technology</span> has seen a drop of <span class = \"lym-story-v\">18</span><span class = \"lym-story-v\">%</span><span class = \"lym-story-v\"> (614.50K)</span> in <span class = \"lym-story-v\">Sales</span> and contributing <span class = \"lym-story-v\">47</span><span class = \"lym-story-d\">%</span> to the overall change.",
+                  "body": [
+                    {
+                      "format": "content",
+                      "main": "Within <span class = \"lym-story-v\">Segment</span>",
+                      "body": [
+                        {
+                          "format": "list",
+                          "main": "A drop of <span class = \"lym-story-v\">33</span><span class = \"lym-story-v\">%</span><span class = \"lym-story-v\"> (392.06K)</span> brought down <span class = \"lym-story-v\"></span> <span class = \"lym-story-v\">Corporate</span> to <span class = \"lym-story-v\">789.85K</span><span class = \"lym-story-v\"></span>. The contribution of <span class = \"lym-story-v\">Corporate</span> to the overall change was noted to be <span class = \"lym-story-v\">30</span><span class = \"lym-story-d\">%</span>.",
+                          "full": "A drop of <span class = \"lym-story-v\">33</span><span class = \"lym-story-v\">%</span><span class = \"lym-story-v\"> (392.06K)</span> brought down <span class = \"lym-story-v\"></span> <span class = \"lym-story-v\">Corporate</span> to <span class = \"lym-story-v\">789.85K</span><span class = \"lym-story-v\"></span>. The contribution of <span class = \"lym-story-v\">Corporate</span> to the overall change was noted to be <span class = \"lym-story-v\">30</span><span class = \"lym-story-d\">%</span>."
+                        }
+                      ],
+                      "full": "Within <span class = \"lym-story-v\">Segment</span>"
+                    },
+                    {
+                      "format": "content",
+                      "main": "Within <span class = \"lym-story-v\">Region</span>",
+                      "body": [
+                        {
+                          "format": "list",
+                          "main": "A drop of <span class = \"lym-story-v\">59</span><span class = \"lym-story-v\">%</span><span class = \"lym-story-v\"> (367.31K)</span> brought down <span class = \"lym-story-v\">South</span> to <span class = \"lym-story-v\">250.56K</span><span class = \"lym-story-v\"></span>. The contribution of <span class = \"lym-story-v\">South</span> to the overall change was noted to be <span class = \"lym-story-v\">28</span><span class = \"lym-story-d\">%</span>.",
+                          "body": [
+                            {
+                              "format": "content",
+                              "main": "",
+                              "body": [
+                                {
+                                  "format": "list",
+                                  "main": "",
+                                  "body": [
+                                    {
+                                      "format": "content",
+                                      "main": "",
+                                      "body": [
+                                        {
+                                          "format": "list",
+                                          "main": "",
+                                          "full": "<span class = \"lym-story-v\">US</span> witnessed a drop of <span class = \"lym-story-v\">97</span><span class = \"lym-story-v\">%</span><span class = \"lym-story-v\"> (221.40K)</span> from <span class = \"lym-story-v\">228.36K</span><span class = \"lym-story-v\"></span> to <span class = \"lym-story-v\">6.96K</span><span class = \"lym-story-v\"></span>, an impact of <span class = \"lym-story-v\">17</span><span class = \"lym-story-d\">%</span> on <span class = \"lym-story-v\">Sales</span>."
+                                        }
+                                      ],
+                                      "full": "Deep diving into <span class = \"lym-story-v\">Region</span>"
+                                    }
+                                  ],
+                                  "full": "A drop of <span class = \"lym-story-v\">84</span><span class = \"lym-story-v\">%</span><span class = \"lym-story-v\"> (286.67K)</span>, is coming from <span class = \"lym-story-v\">Corporate</span> bringing the current value to <span class = \"lym-story-v\">55.33K</span><span class = \"lym-story-v\"></span>. It contributes <span class = \"lym-story-v\">22</span><span class = \"lym-story-d\">%</span> to the overall change."
+                                }
+                              ],
+                              "full": "Drilling down to <span class = \"lym-story-v\">Region</span>"
+                            }
+                          ],
+                          "full": "A drop of <span class = \"lym-story-v\">59</span><span class = \"lym-story-v\">%</span><span class = \"lym-story-v\"> (367.31K)</span> brought down <span class = \"lym-story-v\">South</span> to <span class = \"lym-story-v\">250.56K</span><span class = \"lym-story-v\"></span>. The contribution of <span class = \"lym-story-v\">South</span> to the overall change was noted to be <span class = \"lym-story-v\">28</span><span class = \"lym-story-d\">%</span>."
+                        }
+                      ],
+                      "full": "Within <span class = \"lym-story-v\">Region</span>"
+                    },
+                    {
+                      "format": "content",
+                      "main": "",
+                      "body": [],
+                      "full": ""
+                    }
+                  ],
+                  "full": "<span class = \"lym-story-v\">Technology</span> has seen a drop of <span class = \"lym-story-v\">18</span><span class = \"lym-story-v\">%</span><span class = \"lym-story-v\"> (614.50K)</span> in <span class = \"lym-story-v\">Sales</span> and contributing <span class = \"lym-story-v\">47</span><span class = \"lym-story-d\">%</span> to the overall change."
+                }
+              ],
+              "full": "Focus areas from <span class = \"lym-story-v\">Category</span>"
+            },
+            {
+              "format": "content",
+              "main": "Focus areas from <span class = \"lym-story-v\">Market</span>",
+              "body": [
+                {
+                  "format": "list",
+                  "main": "A delta of <span class = \"lym-story-v\">543.17K</span> within <span class = \"lym-story-v\">LATAM</span> has contributed to <span class = \"lym-story-v\">42</span><span class = \"lym-story-d\">%</span> to the overall decrease in <span class = \"lym-story-v\">Sales</span>.",
+                  "body": [
+                    {
+                      "format": "content",
+                      "main": "Deep diving into <span class = \"lym-story-v\">Region</span>",
+                      "body": [
+                        {
+                          "format": "list",
+                          "main": "<span class = \"lym-story-v\">North</span> witnessed a drop of <span class = \"lym-story-v\">49</span><span class = \"lym-story-v\">%</span><span class = \"lym-story-v\"> (255.52K)</span> from <span class = \"lym-story-v\">520.25K</span><span class = \"lym-story-v\"></span> to <span class = \"lym-story-v\">264.72K</span><span class = \"lym-story-v\"></span>, an impact of <span class = \"lym-story-v\">20</span><span class = \"lym-story-d\">%</span> on <span class = \"lym-story-v\">Sales</span>.",
+                          "full": "<span class = \"lym-story-v\">North</span> witnessed a drop of <span class = \"lym-story-v\">49</span><span class = \"lym-story-v\">%</span><span class = \"lym-story-v\"> (255.52K)</span> from <span class = \"lym-story-v\">520.25K</span><span class = \"lym-story-v\"></span> to <span class = \"lym-story-v\">264.72K</span><span class = \"lym-story-v\"></span>, an impact of <span class = \"lym-story-v\">20</span><span class = \"lym-story-d\">%</span> on <span class = \"lym-story-v\">Sales</span>."
+                        }
+                      ],
+                      "full": "Deep diving into <span class = \"lym-story-v\">Region</span>"
+                    }
+                  ],
+                  "full": "<span class = \"lym-story-v\">LATAM</span> <span class = \"lym-story-v\"></span> witnessed a drop of <span class = \"lym-story-v\">32</span><span class = \"lym-story-v\">%</span><span class = \"lym-story-v\"> (543.17K)</span>, which impacts <span class = \"lym-story-v\">42</span><span class = \"lym-story-d\">%</span> to the overall change."
+                }
+              ],
+              "full": "Focus areas from <span class = \"lym-story-v\">Market</span>"
+            }
+          ],
+          "full": "<div class=\"lym-story-output\"><span class = \"lym-story-v\">Sales</span> witnessed a drop of <span class = \"lym-story-v\">14</span><span class = \"lym-story-v\">%</span><span class = \"lym-story-v\"> (1.31M)</span> in <span class = \"lym-story-v\">December 2019</span> over <span class = \"lym-story-v\">November 2019</span>. This change is driven by:</div>"
+        },
+        {
+          "main": "To arrive at these focus areas I looked at the amount of change in these breaks and their contribution to overall change for <span class = \"lym-story-v\">Sales</span>.",
+          "type": "foot_note1",
+          "full": "To arrive at these focus areas I looked at the amount of change in these breaks and their contribution to overall change for <span class = \"lym-story-v\">Sales</span>."
+        },
+        {
+          "main": "",
+          "type": "footer_narrative",
+          "full": ""
+        },
+        {
+          "main": "<br/><i>For detailed narrative, click on View Full Narrative</i>",
+          "type": "foot_note2",
+          "full": ""
+        },
+        {
+          "main": "Diagnosis - <span class = \"lym-story-v\">Sales</span> <span class = \"lym-story-d\">December 2019</span> Vs. <span class = \"lym-story-d\">November 2019</span>",
+          "type": "chart_title",
+          "full": "Diagnosis - <span class = \"lym-story-v\">Sales</span> <span class = \"lym-story-d\">December 2019</span> Vs. <span class = \"lym-story-d\">November 2019</span>"
+        },
+        {
+          "main": "The 3 key focus area causing the 14% decrease in Sales  in the month of December 2019 vs the month of November 2019 are:\nA delta of -16% in the Medium Order Priority contributing to 65% of the overall drop .\nA delta of -18% in the Technology Category contributing to 47% of the overall drop .\nA delta of -32% in the LATAM Market contributing to 42% of the overall drop .\n",
+          "type": "voice_story",
+          "full": ""
+        }
+      ],
+      "dimension_groups": [
+        "Product",
+        "Geo",
+        "Customer Name",
+        "Order Priority",
+        "Region",
+        "Sub-Category",
+        "Market",
+        "Customer ID"
+      ],
+      "applied_variables": [
+        {
+          "visualization": false,
+          "type": "measure",
+          "data_key": "delta_contribution",
+          "key": "Contribution to Overall Change (in %)"
+        },
+        {
+          "visualization": false,
+          "type": "measure",
+          "data_key": "delta",
+          "key": "Change vs Past Period"
+        },
+        {
+          "visualization": false,
+          "type": "measure",
+          "data_key": "growth",
+          "key": "Percentage Change vs Past Period (in %)"
+        },
+        {
+          "visualization": true,
+          "type": "measure",
+          "data_key": "value",
+          "key": "Value"
+        },
+        {
+          "trend": false,
+          "values": ["month", "quarter", "year"],
+          "type": "date",
+          "data_key": "Order Date.range",
+          "key": "Order Date"
+        },
+        {
+          "visualization": true,
+          "type": "dimension",
+          "data_key": "focus_area",
+          "key": "Focus Area"
+        }
+      ],
+      "showFocusFooter": false,
+      "threshold": 20,
+      "applied_filters": [
+        {
+          "applied": [
+            {
+              "gte": "2019/12/01 00:00:00",
+              "lte": "2019/12/31 23:59:59",
+              "ref_interval": "month"
+            },
+            {
+              "gte": "2019/11/01 00:00:00",
+              "lte": "2019/11/30 23:59:59",
+              "ref_interval": "month"
+            }
+          ],
+          "label": "Order Date",
+          "key": "Order Date"
+        }
+      ],
+      "level_list": [],
+      "chart_filters": [],
+      "output": [
+        {
+          "view": "Cross Dimension View",
+          "data": [
+            {
+              "delta_contribution": 100.0,
+              "children": [
+                {
+                  "delta_contribution": 65.4,
+                  "children": [
+                    {
+                      "delta_contribution": 33.34,
+                      "children": [
+                        {
+                          "delta_contribution": 16.03,
+                          "children": [
+                            {
+                              "delta_contribution": 10.14,
+                              "children": [],
+                              "focus_area": "Copiers",
+                              "delta": -132363.21,
+                              "growth": -53.06,
+                              "contribution_perc": 1.52,
+                              "sub_level": "Sub-Category",
+                              "value": 10.14
+                            }
+                          ],
+                          "focus_area": "Technology",
+                          "delta": -209349.29,
+                          "growth": -48.05,
+                          "contribution_perc": 2.93,
+                          "sub_level": "Category",
+                          "value": 16.03
+                        }
+                      ],
+                      "focus_area": "LATAM",
+                      "delta": -435294.02,
+                      "growth": -40.96,
+                      "contribution_perc": 8.12,
+                      "sub_level": "Market",
+                      "value": 33.34
+                    },
+                    {
+                      "delta_contribution": 25.39,
+                      "children": [
+                        {
+                          "delta_contribution": 16.36,
+                          "children": [
+                            {
+                              "delta_contribution": 13.67,
+                              "children": [],
+                              "focus_area": "Consumer",
+                              "delta": -178531.1,
+                              "growth": -38.1,
+                              "contribution_perc": 3.75,
+                              "sub_level": "Segment",
+                              "value": 13.67
+                            }
+                          ],
+                          "focus_area": "Copiers",
+                          "delta": -213683.15,
+                          "growth": -26.07,
+                          "contribution_perc": 7.84,
+                          "sub_level": "Sub-Category",
+                          "value": 16.36
+                        }
+                      ],
+                      "focus_area": "Technology",
+                      "delta": -331518.2,
+                      "growth": -15.95,
+                      "contribution_perc": 22.61,
+                      "sub_level": "Category",
+                      "value": 25.39
+                    },
+                    {
+                      "delta_contribution": 24.27,
+                      "children": [],
+                      "focus_area": "Storage",
+                      "delta": -316859.43,
+                      "growth": -52.58,
+                      "contribution_perc": 3.7,
+                      "sub_level": "Sub-Category",
+                      "value": 24.27
+                    }
+                  ],
+                  "focus_area": "Medium",
+                  "delta": -854008.64,
+                  "growth": -15.62,
+                  "contribution_perc": 59.7,
+                  "sub_level": "Order Priority",
+                  "value": 65.4
+                },
+                {
+                  "delta_contribution": 47.06,
+                  "children": [
+                    {
+                      "delta_contribution": 30.02,
+                      "children": [
+                        {
+                          "delta_contribution": 26.49,
+                          "children": [],
+                          "focus_area": "United States",
+                          "delta": -345935.63,
+                          "growth": -92.32,
+                          "contribution_perc": 0.37,
+                          "sub_level": "Country",
+                          "value": 26.49
+                        }
+                      ],
+                      "focus_area": "Corporate",
+                      "delta": -392059.27,
+                      "growth": -33.17,
+                      "contribution_perc": 10.22,
+                      "sub_level": "Segment",
+                      "value": 30.02
+                    },
+                    {
+                      "delta_contribution": 28.13,
+                      "children": [
+                        {
+                          "delta_contribution": 21.95,
+                          "children": [
+                            {
+                              "delta_contribution": 16.95,
+                              "children": [],
+                              "focus_area": "US",
+                              "delta": -221396.26,
+                              "growth": -96.95,
+                              "contribution_perc": 0.09,
+                              "sub_level": "Market",
+                              "value": 16.95
+                            }
+                          ],
+                          "focus_area": "Corporate",
+                          "delta": -286667.17,
+                          "growth": -83.82,
+                          "contribution_perc": 0.72,
+                          "sub_level": "Segment",
+                          "value": 21.95
+                        }
+                      ],
+                      "focus_area": "South",
+                      "delta": -367308.85,
+                      "growth": -59.45,
+                      "contribution_perc": 3.24,
+                      "sub_level": "Region",
+                      "value": 28.13
+                    },
+                    {
+                      "delta_contribution": 27.94,
+                      "children": [],
+                      "focus_area": "LATAM",
+                      "delta": -364887.01,
+                      "growth": -51.22,
+                      "contribution_perc": 4.5,
+                      "sub_level": "Market",
+                      "value": 27.94
+                    }
+                  ],
+                  "focus_area": "Technology",
+                  "delta": -614502.63,
+                  "growth": -17.63,
+                  "contribution_perc": 37.17,
+                  "sub_level": "Category",
+                  "value": 47.06
+                },
+                {
+                  "delta_contribution": 41.6,
+                  "children": [
+                    {
+                      "delta_contribution": 19.57,
+                      "children": [],
+                      "focus_area": "North",
+                      "delta": -255523.82,
+                      "growth": -49.12,
+                      "contribution_perc": 3.43,
+                      "sub_level": "Region",
+                      "value": 19.57
+                    }
+                  ],
+                  "focus_area": "LATAM",
+                  "delta": -543169.22,
+                  "growth": -31.86,
+                  "contribution_perc": 15.04,
+                  "sub_level": "Market",
+                  "value": 41.6
+                }
+              ],
+              "focus_area": "Overall",
+              "name": "overall",
+              "delta": -1305792.21,
+              "growth": -14.46,
+              "contribution_perc": 100.0,
+              "value": 100.0
+            }
+          ]
+        },
+        {
+          "view": "Single Dimension View",
+          "data": [
+            {
+              "delta_contribution": 100.0,
+              "children": [
+                {
+                  "delta_contribution": 47.06,
+                  "children": [
+                    {
+                      "delta_contribution": 30.02,
+                      "children": [
+                        {
+                          "delta_contribution": 12.04,
+                          "children": [],
+                          "focus_area": "First Class",
+                          "core_level": "Product",
+                          "delta": -157228.39,
+                          "growth": -79.65,
+                          "contribution_perc": 0.52,
+                          "value": 12.04
+                        }
+                      ],
+                      "focus_area": "Corporate",
+                      "core_level": "Product",
+                      "delta": -392059.27,
+                      "growth": -33.17,
+                      "contribution_perc": 10.22,
+                      "value": 30.02
+                    },
+                    {
+                      "delta_contribution": 10.99,
+                      "children": [
+                        {
+                          "delta_contribution": 10.03,
+                          "children": [],
+                          "focus_area": "Standard Class",
+                          "core_level": "Product",
+                          "delta": -131026.8,
+                          "growth": -13.41,
+                          "contribution_perc": 10.95,
+                          "value": 10.03
+                        }
+                      ],
+                      "focus_area": "Consumer",
+                      "core_level": "Product",
+                      "delta": -143497.29,
+                      "growth": -8.96,
+                      "contribution_perc": 18.86,
+                      "value": 10.99
+                    }
+                  ],
+                  "focus_area": "Technology",
+                  "core_level": "Product",
+                  "delta": -614502.63,
+                  "growth": -17.63,
+                  "contribution_perc": 37.17,
+                  "value": 47.06
+                },
+                {
+                  "delta_contribution": 37.92,
+                  "children": [
+                    {
+                      "delta_contribution": 19.35,
+                      "children": [
+                        {
+                          "delta_contribution": 17.64,
+                          "children": [],
+                          "focus_area": "Standard Class",
+                          "core_level": "Product",
+                          "delta": -230379.85,
+                          "growth": -26.85,
+                          "contribution_perc": 8.12,
+                          "value": 17.64
+                        }
+                      ],
+                      "focus_area": "Consumer",
+                      "core_level": "Product",
+                      "delta": -252733.05,
+                      "growth": -17.52,
+                      "contribution_perc": 15.4,
+                      "value": 19.35
+                    },
+                    {
+                      "delta_contribution": 12.57,
+                      "children": [
+                        {
+                          "delta_contribution": 6.28,
+                          "children": [],
+                          "focus_area": "Second Class",
+                          "core_level": "Product",
+                          "delta": -81961.73,
+                          "growth": -67.02,
+                          "contribution_perc": 0.52,
+                          "value": 6.28
+                        }
+                      ],
+                      "focus_area": "Home Office",
+                      "core_level": "Product",
+                      "delta": -164201.33,
+                      "growth": -28.32,
+                      "contribution_perc": 5.38,
+                      "value": 12.57
+                    }
+                  ],
+                  "focus_area": "Office Supplies",
+                  "core_level": "Product",
+                  "delta": -495197.7,
+                  "growth": -17.61,
+                  "contribution_perc": 29.99,
+                  "value": 37.92
+                },
+                {
+                  "delta_contribution": 15.02,
+                  "children": [
+                    {
+                      "delta_contribution": 11.33,
+                      "children": [
+                        {
+                          "delta_contribution": 9.74,
+                          "children": [],
+                          "focus_area": "Standard Class",
+                          "core_level": "Product",
+                          "delta": -127198.5,
+                          "growth": -33.77,
+                          "contribution_perc": 3.23,
+                          "value": 9.74
+                        }
+                      ],
+                      "focus_area": "Home Office",
+                      "core_level": "Product",
+                      "delta": -147975.43,
+                      "growth": -26.24,
+                      "contribution_perc": 5.38,
+                      "value": 11.33
+                    },
+                    {
+                      "delta_contribution": 7.85,
+                      "children": [
+                        {
+                          "delta_contribution": 10.02,
+                          "children": [],
+                          "focus_area": "Standard Class",
+                          "core_level": "Product",
+                          "delta": -130826.9,
+                          "growth": -25.93,
+                          "contribution_perc": 4.84,
+                          "value": 10.02
+                        }
+                      ],
+                      "focus_area": "Corporate",
+                      "core_level": "Product",
+                      "delta": -102451.05,
+                      "growth": -13.78,
+                      "contribution_perc": 8.29,
+                      "value": 7.85
+                    }
+                  ],
+                  "focus_area": "Furniture",
+                  "core_level": "Product",
+                  "delta": -196091.86,
+                  "growth": -7.17,
+                  "contribution_perc": 32.84,
+                  "value": 15.02
+                }
+              ],
+              "focus_area": "Product",
+              "core_level": "Product",
+              "delta": -1305792.21,
+              "growth": -14.46,
+              "contribution_perc": 100.0,
+              "value": 100.0
+            },
+            {
+              "delta_contribution": 100.0,
+              "children": [
+                {
+                  "delta_contribution": 29.07,
+                  "children": [
+                    {
+                      "delta_contribution": 13.88,
+                      "children": [
+                        {
+                          "delta_contribution": 9.27,
+                          "children": [],
+                          "focus_area": "Burlington",
+                          "core_level": "Geo",
+                          "delta": -120993.76,
+                          "growth": -78.51,
+                          "contribution_perc": 0.43,
+                          "value": 9.27
+                        }
+                      ],
+                      "focus_area": "North Carolina",
+                      "core_level": "Geo",
+                      "delta": -181287.96,
+                      "growth": -83.86,
+                      "contribution_perc": 0.45,
+                      "value": 13.88
+                    },
+                    {
+                      "delta_contribution": 13.64,
+                      "children": [
+                        {
+                          "delta_contribution": 8.05,
+                          "children": [],
+                          "focus_area": "Seattle",
+                          "core_level": "Geo",
+                          "delta": -105167.37,
+                          "growth": -67.34,
+                          "contribution_perc": 0.66,
+                          "value": 8.05
+                        }
+                      ],
+                      "focus_area": "Washington",
+                      "core_level": "Geo",
+                      "delta": -178128.72,
+                      "growth": -77.02,
+                      "contribution_perc": 0.69,
+                      "value": 13.64
+                    },
+                    {
+                      "delta_contribution": 10.21,
+                      "children": [
+                        {
+                          "delta_contribution": 9.61,
+                          "children": [],
+                          "focus_area": "New York City",
+                          "core_level": "Geo",
+                          "delta": -125497.74,
+                          "growth": -47.75,
+                          "contribution_perc": 1.78,
+                          "value": 9.61
+                        }
+                      ],
+                      "focus_area": "New York",
+                      "core_level": "Geo",
+                      "delta": -133288.02,
+                      "growth": -47.92,
+                      "contribution_perc": 1.87,
+                      "value": 10.21
+                    }
+                  ],
+                  "focus_area": "United States",
+                  "core_level": "Geo",
+                  "delta": -379620.03,
+                  "growth": -21.18,
+                  "contribution_perc": 18.28,
+                  "value": 29.07
+                },
+                {
+                  "delta_contribution": 27.21,
+                  "children": [
+                    {
+                      "delta_contribution": 13.61,
+                      "children": [
+                        {
+                          "delta_contribution": 13.61,
+                          "children": [],
+                          "focus_area": "Gorakhpur",
+                          "core_level": "Geo",
+                          "delta": -177666.75,
+                          "growth": -100.0,
+                          "contribution_perc": 0.0,
+                          "value": 13.61
+                        }
+                      ],
+                      "focus_area": "Haryana",
+                      "core_level": "Geo",
+                      "delta": -177666.75,
+                      "growth": -100.0,
+                      "contribution_perc": 0.0,
+                      "value": 13.61
+                    },
+                    {
+                      "delta_contribution": 7.5,
+                      "children": [
+                        {
+                          "delta_contribution": 5.81,
+                          "children": [],
+                          "focus_area": "Mangalore",
+                          "core_level": "Geo",
+                          "delta": -75930.43,
+                          "growth": -99.9,
+                          "contribution_perc": 0.0,
+                          "value": 5.81
+                        }
+                      ],
+                      "focus_area": "Karnataka",
+                      "core_level": "Geo",
+                      "delta": -97980.93,
+                      "growth": -90.08,
+                      "contribution_perc": 0.14,
+                      "value": 7.5
+                    }
+                  ],
+                  "focus_area": "India",
+                  "core_level": "Geo",
+                  "delta": -355343.39,
+                  "growth": -60.77,
+                  "contribution_perc": 2.97,
+                  "value": 27.21
+                },
+                {
+                  "delta_contribution": 21.56,
+                  "children": [
+                    {
+                      "delta_contribution": 5.88,
+                      "children": [
+                        {
+                          "delta_contribution": 6.17,
+                          "children": [],
+                          "focus_area": "Qitaihe",
+                          "core_level": "Geo",
+                          "delta": -80583.99,
+                          "growth": -100.0,
+                          "contribution_perc": 0.0,
+                          "value": 6.17
+                        }
+                      ],
+                      "focus_area": "Heilongjiang",
+                      "core_level": "Geo",
+                      "delta": -76727.16,
+                      "growth": -87.9,
+                      "contribution_perc": 0.14,
+                      "value": 5.88
+                    }
+                  ],
+                  "focus_area": "China",
+                  "core_level": "Geo",
+                  "delta": -281511.51,
+                  "growth": -58.49,
+                  "contribution_perc": 2.59,
+                  "value": 21.56
+                }
+              ],
+              "focus_area": "Geo",
+              "core_level": "Geo",
+              "delta": -1305792.21,
+              "growth": -14.46,
+              "contribution_perc": 100.0,
+              "value": 100.0
+            },
+            {
+              "delta_contribution": 100.0,
+              "children": [
+                {
+                  "delta_contribution": 15.11,
+                  "children": [],
+                  "focus_area": "Barry Franz",
+                  "core_level": "Customer Name",
+                  "delta": -197273.42,
+                  "growth": -97.9,
+                  "contribution_perc": 0.05,
+                  "value": 15.11
+                },
+                {
+                  "delta_contribution": 14.78,
+                  "children": [],
+                  "focus_area": "Grant Thornton",
+                  "core_level": "Customer Name",
+                  "delta": -193005.07,
+                  "growth": -98.52,
+                  "contribution_perc": 0.04,
+                  "value": 14.78
+                },
+                {
+                  "delta_contribution": 11.57,
+                  "children": [],
+                  "focus_area": "Delfina Latchford",
+                  "core_level": "Customer Name",
+                  "delta": -151033.98,
+                  "growth": -92.73,
+                  "contribution_perc": 0.15,
+                  "value": 11.57
+                }
+              ],
+              "focus_area": "Customer Name",
+              "core_level": "Customer Name",
+              "delta": -1305792.21,
+              "growth": -14.46,
+              "contribution_perc": 100.0,
+              "value": 100.0
+            },
+            {
+              "delta_contribution": 100.0,
+              "children": [
+                {
+                  "delta_contribution": 65.4,
+                  "children": [],
+                  "focus_area": "Medium",
+                  "core_level": "Order Priority",
+                  "delta": -854008.64,
+                  "growth": -15.62,
+                  "contribution_perc": 59.7,
+                  "value": 65.4
+                },
+                {
+                  "delta_contribution": 29.34,
+                  "children": [],
+                  "focus_area": "High",
+                  "core_level": "Order Priority",
+                  "delta": -383161.02,
+                  "growth": -15.02,
+                  "contribution_perc": 28.06,
+                  "value": 29.34
+                },
+                {
+                  "delta_contribution": 12.63,
+                  "children": [],
+                  "focus_area": "Low",
+                  "core_level": "Order Priority",
+                  "delta": -164924.48,
+                  "growth": -35.37,
+                  "contribution_perc": 3.9,
+                  "value": 12.63
+                }
+              ],
+              "focus_area": "Order Priority",
+              "core_level": "Order Priority",
+              "delta": -1305792.21,
+              "growth": -14.46,
+              "contribution_perc": 100.0,
+              "value": 100.0
+            },
+            {
+              "delta_contribution": 100.0,
+              "children": [
+                {
+                  "delta_contribution": 38.38,
+                  "children": [],
+                  "focus_area": "South",
+                  "core_level": "Region",
+                  "delta": -501220.63,
+                  "growth": -36.82,
+                  "contribution_perc": 11.13,
+                  "value": 38.38
+                },
+                {
+                  "delta_contribution": 24.99,
+                  "children": [],
+                  "focus_area": "Central Asia",
+                  "core_level": "Region",
+                  "delta": -326378.73,
+                  "growth": -54.54,
+                  "contribution_perc": 3.52,
+                  "value": 24.99
+                },
+                {
+                  "delta_contribution": 20.77,
+                  "children": [],
+                  "focus_area": "Oceania",
+                  "core_level": "Region",
+                  "delta": -271212.27,
+                  "growth": -34.93,
+                  "contribution_perc": 6.54,
+                  "value": 20.77
+                }
+              ],
+              "focus_area": "Region",
+              "core_level": "Region",
+              "delta": -1305792.21,
+              "growth": -14.46,
+              "contribution_perc": 100.0,
+              "value": 100.0
+            },
+            {
+              "delta_contribution": 100.0,
+              "children": [
+                {
+                  "delta_contribution": 29.76,
+                  "children": [],
+                  "focus_area": "Storage",
+                  "core_level": "Sub-Category",
+                  "delta": -388594.46,
+                  "growth": -42.33,
+                  "contribution_perc": 6.85,
+                  "value": 29.76
+                },
+                {
+                  "delta_contribution": 21.49,
+                  "children": [],
+                  "focus_area": "Machines",
+                  "core_level": "Sub-Category",
+                  "delta": -280623.39,
+                  "growth": -45.48,
+                  "contribution_perc": 4.35,
+                  "value": 21.49
+                },
+                {
+                  "delta_contribution": 13.75,
+                  "children": [],
+                  "focus_area": "Accessories",
+                  "core_level": "Sub-Category",
+                  "delta": -179545.68,
+                  "growth": -30.19,
+                  "contribution_perc": 5.37,
+                  "value": 13.75
+                }
+              ],
+              "focus_area": "Sub-Category",
+              "core_level": "Sub-Category",
+              "delta": -1305792.21,
+              "growth": -14.46,
+              "contribution_perc": 100.0,
+              "value": 100.0
+            },
+            {
+              "delta_contribution": 100.0,
+              "children": [
+                {
+                  "delta_contribution": 41.6,
+                  "children": [],
+                  "focus_area": "LATAM",
+                  "core_level": "Market",
+                  "delta": -543169.22,
+                  "growth": -31.86,
+                  "contribution_perc": 15.04,
+                  "value": 41.6
+                },
+                {
+                  "delta_contribution": 35.67,
+                  "children": [],
+                  "focus_area": "APAC",
+                  "core_level": "Market",
+                  "delta": -465803.54,
+                  "growth": -18.88,
+                  "contribution_perc": 25.91,
+                  "value": 35.67
+                },
+                {
+                  "delta_contribution": 29.07,
+                  "children": [],
+                  "focus_area": "US",
+                  "core_level": "Market",
+                  "delta": -379620.03,
+                  "growth": -21.18,
+                  "contribution_perc": 18.28,
+                  "value": 29.07
+                }
+              ],
+              "focus_area": "Market",
+              "core_level": "Market",
+              "delta": -1305792.21,
+              "growth": -14.46,
+              "contribution_perc": 100.0,
+              "value": 100.0
+            },
+            {
+              "delta_contribution": 100.0,
+              "children": [
+                {
+                  "delta_contribution": 15.11,
+                  "children": [],
+                  "focus_area": "BF-11005",
+                  "core_level": "Customer ID",
+                  "delta": -197273.42,
+                  "growth": -97.9,
+                  "contribution_perc": 0.05,
+                  "value": 15.11
+                },
+                {
+                  "delta_contribution": 15.0,
+                  "children": [],
+                  "focus_area": "GT-14635",
+                  "core_level": "Customer ID",
+                  "delta": -195898.1,
+                  "growth": -100.0,
+                  "contribution_perc": 0.0,
+                  "value": 15.0
+                },
+                {
+                  "delta_contribution": 10.67,
+                  "children": [],
+                  "focus_area": "DL-13315",
+                  "core_level": "Customer ID",
+                  "delta": -139331.61,
+                  "growth": -92.17,
+                  "contribution_perc": 0.15,
+                  "value": 10.67
+                }
+              ],
+              "focus_area": "Customer ID",
+              "core_level": "Customer ID",
+              "delta": -1305792.21,
+              "growth": -14.46,
+              "contribution_perc": 100.0,
+              "value": 100.0
+            }
+          ]
+        }
+      ],
+      "sub domain": "62b9a5907a70f00001e01a48",
+      "deepdive_chart_title": "Diagnosis - <span class = \"lym-story-v\">Sales</span> <span class = \"lym-story-d\">December 2019</span> Vs. <span class = \"lym-story-d\">November 2019</span>",
+      "id": "leni_62a98c267a70f00001d910a4_0fe2f3571b9940df87e12e9d91a9e368_0",
+      "chart": {
+        "type": "Force-directed-chart",
+        "title": "Value, Percentage Change vs Past Period (in %), Change vs Past Period and Contribution to Overall Change (in %) by Focus Area and Order Date"
+      },
+      "status": "output generation success"
+    }
+  ],
+  "question": "why has sales changed",
+  "job_id": "62c8261bcfbf3d132bb56071",
+  "resource_id": "leni_62a98c267a70f00001d910a4_0fe2f3571b9940df87e12e9d91a9e368_0",
+  "status_txt": "OUTPUT GENERATION SUCCESS"
+}
