@@ -112,14 +112,14 @@ const CollapsibleStory = forwardRef((props, ref) => {
   const [innerCollapseState, setInnerCollapseState] = useState({});
   const [outerCollapseState, setOuterCollapseState] = useState({});
 
-  const handleChange = (event, isexpanded, index) => {
+  const handleChange = (event, isexpanded, index, focusIndex) => {
     console.log('triggered');
     console.log({ isexpanded });
     // setExpanded(isexpanded ? panel : false);
     // setDynamicIndex(isexpanded ? panel : '');
     setOuterCollapseState({
       ...outerCollapseState,
-      [index]: isexpanded ? true : false,
+      [`${focusIndex}-${index}`]: isexpanded ? true : false,
     });
   };
 
@@ -133,14 +133,30 @@ const CollapsibleStory = forwardRef((props, ref) => {
 
   useImperativeHandle(ref, () => ({
     expandOuterAccordions: () => {
-      console.log('REFS');
-      console.log({ ...outerCollapseState });
-      setOuterCollapseState({ ...outerCollapseState, [props.index]: true });
+      console.log('EXPANDED', outerCollapseState);
+      // expandOuterCollapse();
     },
   }));
 
+  function expandOuterCollapse() {
+    const outerState = outerCollapseState;
+    Object.keys(outerState).map((obj) => {
+      outerState[obj] = true;
+    });
+    console.log('EXPANDED');
+    setOuterCollapseState(outerState);
+  }
+
   useEffect(() => {
-    setOuterCollapseState({ [props.index]: false });
+    // detail &&
+    //   Array.isArray(detail) &&
+    //   detail.length > 0 &&
+    //   detail?.map((item, idx1) => {
+    setOuterCollapseState({
+      ...outerCollapseState,
+      [`${props.focusIndex}-${props.index}`]: true,
+    });
+    // });
   }, []);
 
   useEffect(() => {
@@ -221,9 +237,11 @@ const CollapsibleStory = forwardRef((props, ref) => {
     <>
       <Accordion
         // expanded={expanded === 'panel'}
-        expanded={outerCollapseState[props.index] === true}
+        expanded={
+          outerCollapseState[`${props.focusIndex}-${props.index}`] === true
+        }
         onChange={(event, isExpanded) => {
-          handleChange(event, isExpanded, props.index);
+          handleChange(event, isExpanded, props.index, props.focusIndex);
         }}
       >
         <AccordionSummary
@@ -231,7 +249,9 @@ const CollapsibleStory = forwardRef((props, ref) => {
           id={`panel-header`}
           // isexpanded={expanded ? expanded : undefined}
           isexpanded={
-            outerCollapseState[props.index] === true ? true : undefined
+            outerCollapseState[`${props.focusIndex}-${props.index}`] === true
+              ? true
+              : undefined
           }
           detail={detail === undefined ? 'hide' : 'show'}
           style={{ pointerEvents: detail === undefined ? 'none' : '' }}

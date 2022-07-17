@@ -31,7 +31,7 @@ const CustomBox = styled(Box)(() => ({
 //Client app can hide this component through configuration that is consumed from askLumin widget.
 const Narratives = (props) => {
   // const collapseRef = useRef(null);
-  const collapseRef = useRef(null);
+  const collapseRef = useRef([]);
   const { narrative } = props;
   const [whyStory, setWhyStory] = useState({});
   const [expandAll, setExpandAll] = useState(undefined);
@@ -64,7 +64,7 @@ const Narratives = (props) => {
       {narrative && !narrative?.whyTypeNarrative && narrative?.story && (
         <CustomBlockquote>
           <CustomTypography component="div">
-            {parse(narrative.story)}bullshit
+            {parse(narrative.story)}
           </CustomTypography>
         </CustomBlockquote>
       )}
@@ -78,16 +78,11 @@ const Narratives = (props) => {
             </CustomTypography>
             <Button
               onClick={() => {
-                let list = [];
-                whyStory?.body &&
-                  Array.isArray(whyStory?.body) &&
-                  whyStory?.body.length > 0 &&
-                  whyStory.body.map((item, id) => {
-                    list.push(id);
-                  });
-
-                collapseRef.current.expandOuterAccordions();
-                list.forEach((item) => {});
+                console.log(
+                  collapseRef.current.forEach((obj) => {
+                    obj.expandOuterAccordions()
+                  })
+                );
               }}
             >
               Expand All
@@ -122,7 +117,10 @@ const Narratives = (props) => {
                                     index={idx}
                                     expandAll={expandAll}
                                     setExpandAll={setExpandAll}
-                                    ref={collapseRef}
+                                    ref={(el) =>
+                                      (collapseRef.current[idx] = el)
+                                    }
+                                    focusIndex={id}
                                   />
                                 </Fragment>
                               );
