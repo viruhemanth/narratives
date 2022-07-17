@@ -18,6 +18,8 @@ import MuiAccordionDetails from '@mui/material/AccordionDetails';
 import Typography from '@mui/material/Typography';
 import Tooltip from '@mui/material/Tooltip';
 
+import { useMainNarrativesContext } from './MainNarrativesContext';
+
 // import Box from '@material-ui/core/Box';
 // import MuiAccordion from '@material-ui/core/Accordion';
 // import MuiAccordionSummary from '@material-ui/core/AccordionSummary';
@@ -104,13 +106,15 @@ const AccordionDetails = styled(MuiAccordionDetails)(() => ({
 }));
 
 const CollapsibleStory = forwardRef((props, ref) => {
-  const { title, detail, index, expandAll, setExpandAll } = props;
+  const { title, detail, index } = props;
   const [expanded, setExpanded] = useState(false);
   const [dynamicIndex, setDynamicIndex] = useState('');
   const [innerIndex, setInnerIndex] = useState('');
   const [parentIndex, setParentIndex] = useState('');
   const [innerCollapseState, setInnerCollapseState] = useState({});
   const [outerCollapseState, setOuterCollapseState] = useState({});
+
+  const { expandAll } = useMainNarrativesContext();
 
   const handleChange = (event, isexpanded, index, focusIndex) => {
     console.log('triggered');
@@ -147,29 +151,13 @@ const CollapsibleStory = forwardRef((props, ref) => {
     setOuterCollapseState(outerState);
   }
 
-  useEffect(() => {
-    // detail &&
-    //   Array.isArray(detail) &&
-    //   detail.length > 0 &&
-    //   detail?.map((item, idx1) => {
-    setOuterCollapseState({
-      ...outerCollapseState,
-      [`${props.focusIndex}-${props.index}`]: true,
-    });
-    // });
-  }, []);
-
-  useEffect(() => {
-    console.log('OUTER COLLAPSE STATE', outerCollapseState);
-  });
-
-  // useEffect(() => {
-  //   console.log('USE EFFECt', parentIndex);
-  // }, []);
-
-  let indexes = [];
-
-  const recursive = (item, parentIndex, handleCollapse, innerCollapseState) => {
+  const recursive = (
+    item,
+    parentIndex,
+    handleCollapse,
+    innerCollapseState,
+    setInnerCollapseState
+  ) => {
     let menuItem;
     // console.log('parentIndex', parentIndex, item, 'childIndex', childIndex);
     if (item?.body?.length === 0 || item?.body === undefined) {
@@ -187,7 +175,8 @@ const CollapsibleStory = forwardRef((props, ref) => {
           item,
           parentIndex,
           handleCollapse,
-          innerCollapseState
+          innerCollapseState,
+          setInnerCollapseState
         );
         return menuItem;
       });
@@ -210,6 +199,7 @@ const CollapsibleStory = forwardRef((props, ref) => {
           </>
         );
       } else {
+        // setInnerCollapseState({ ...innerCollapseState, [item?.full]: false });
         menuItem = (
           <Accordion
             expanded={innerCollapseState[item?.full] === true}
@@ -230,6 +220,67 @@ const CollapsibleStory = forwardRef((props, ref) => {
     }
     return menuItem;
   };
+
+  useEffect(() => {
+    // detail &&
+    //   Array.isArray(detail) &&
+    //   detail.length > 0 &&
+    //   detail?.map((item, idx1) => {
+    setOuterCollapseState({
+      ...outerCollapseState,
+      [`${props.focusIndex}-${props.index}`]: true,
+    });
+    // });
+  }, []);
+
+  useEffect(() => {
+    console.log('expandAll');
+    if (expandAll === true) {
+      console.log('expand all', expandAll, outerCollapseState);
+      const newOuterState = outerCollapseState;
+      Object.keys(newOuterState).map((key) => {
+        newOuterState[key] = false;
+      });
+      setOuterCollapseState(newOuterState);
+    }
+  }, [expandAll]);
+
+  useEffect(() => {
+    const recursive = (
+      item,
+      parentIndex,
+      handleCollapse,
+      innerCollapseState,
+      setInnerCollapseState
+    ) => {
+      if (item?.body?.length === 0 || item?.body === undefined) {
+      } else {
+        return null;
+      }
+      if (item?.format === 'content') {
+        console.log('RERERERER');
+      } else {
+        console.log('QQQQQQQQQq');
+        console.log(item?.full);
+      }
+    };
+    console.log('POPOPO');
+    detail &&
+      Array.isArray(detail) &&
+      detail.length > 0 &&
+      detail?.map((item, idx1) => {
+        console.log('IRERETE');
+        recursive(
+          item,
+          idx1,
+          handleCollapse,
+          innerCollapseState,
+          setInnerCollapseState
+        );
+      });
+  }, []);
+
+  let indexes = [];
 
   console.log(indexes);
 
@@ -290,7 +341,13 @@ const CollapsibleStory = forwardRef((props, ref) => {
                       })}
                   </CustomUl> */}
                     {/* {indexes.push(idx1)} */}
-                    {recursive(item, idx1, handleCollapse, innerCollapseState)}
+                    {recursive(
+                      item,
+                      idx1,
+                      handleCollapse,
+                      innerCollapseState,
+                      setInnerCollapseState
+                    )}
                   </Box>
                 );
               }

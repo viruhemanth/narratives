@@ -7,6 +7,8 @@ import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import CollapsibleStory from './CollapsibleStory';
 
+import { useMainNarrativesContext } from './MainNarrativesContext';
+
 import './Narratives.css';
 
 //Start - Element Custamization
@@ -32,6 +34,7 @@ const CustomBox = styled(Box)(() => ({
 const Narratives = (props) => {
   // const collapseRef = useRef(null);
   const collapseRef = useRef([]);
+  const { toggleExpandAll } = useMainNarrativesContext();
   const { narrative } = props;
   const [whyStory, setWhyStory] = useState({});
   const [expandAll, setExpandAll] = useState(undefined);
@@ -61,13 +64,6 @@ const Narratives = (props) => {
 
   return (
     <div>
-      {narrative && !narrative?.whyTypeNarrative && narrative?.story && (
-        <CustomBlockquote>
-          <CustomTypography component="div">
-            {parse(narrative.story)}
-          </CustomTypography>
-        </CustomBlockquote>
-      )}
       {narrative &&
         narrative?.whyTypeNarrative &&
         whyStory &&
@@ -78,7 +74,8 @@ const Narratives = (props) => {
             </CustomTypography>
             <Button
               onClick={() => {
-                console.log(collapseRef);
+                // console.log(collapseRef);
+                toggleExpandAll('expand');
               }}
             >
               Expand All

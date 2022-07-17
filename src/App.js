@@ -7,6 +7,11 @@ import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import Narratives from './Narratives';
 
+import {
+  MainNarrativesContextProvider,
+  useMainNarrativesContext,
+} from './MainNarrativesContext';
+
 import Narratives from './Narratives';
 const output = require('./why.json');
 
@@ -57,11 +62,13 @@ export default function App(props) {
 
   return (
     <>
+    <MainNarrativesContextProvider>
       <Box sx={{ p: 2, backgroundColor: '#FAFAFA', borderRadius: '4px' }}>
         <Narratives
           narrative={extractNarrative(data, data?.chart?.type.toLowerCase())}
         />
       </Box>
+      </MainNarrativesContextProvider>
     </>
   );
 }
