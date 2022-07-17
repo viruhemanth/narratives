@@ -78,11 +78,7 @@ const Narratives = (props) => {
             </CustomTypography>
             <Button
               onClick={() => {
-                console.log(
-                  collapseRef.current.forEach((obj) => {
-                    obj.expandOuterAccordions()
-                  })
-                );
+                console.log(collapseRef);
               }}
             >
               Expand All

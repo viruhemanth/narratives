@@ -1,3 +1,6 @@
-# react-ttoiku
+PLAN,
 
-[Edit on StackBlitz ⚡️](https://stackblitz.com/edit/react-ttoiku)
+put the local state to context from the useEffect.
+try first with outerstate.
+
+try outerstate implementation with innerstate in the useEffect
