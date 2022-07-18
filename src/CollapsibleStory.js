@@ -247,37 +247,24 @@ const CollapsibleStory = forwardRef((props, ref) => {
 
   useEffect(() => {
     const list = [];
-    const recursive = (
-      item,
-      parentIndex,
-      handleCollapse,
-      innerCollapseState,
-      setInnerCollapseState
-    ) => {
-      if (item?.body?.length === 0 || item?.body === undefined) {
-      } else {
-        return null;
-      }
-      if (item?.format === 'list' && item?.full !== undefined) {
-        list.push(item?.full);
-      }
-      if (item?.body && item?.body.length > 0) {
-        recursive(item.body);
+    const recursive = (item) => {
+      if (item.body && item.body.length) {
+        item?.body.map((i) => {
+          if (i.format === 'list') {
+            list.push(i?.full);
+            recursive(i?.body);
+          }
+          if (i.format === 'content') {
+            recursive(i?.body);
+          }
+        });
       }
     };
-    console.log('POPOPO');
     detail &&
       Array.isArray(detail) &&
       detail.length > 0 &&
       detail?.map((item, idx1) => {
-        console.log('IRERETE');
-        recursive(
-          item,
-          idx1,
-          handleCollapse,
-          innerCollapseState,
-          setInnerCollapseState
-        );
+        recursive(item);
       });
     console.log('LIST', list);
   }, []);
