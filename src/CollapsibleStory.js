@@ -246,6 +246,7 @@ const CollapsibleStory = forwardRef((props, ref) => {
   }, [expandAll]);
 
   useEffect(() => {
+    const list = [];
     const recursive = (
       item,
       parentIndex,
@@ -257,11 +258,11 @@ const CollapsibleStory = forwardRef((props, ref) => {
       } else {
         return null;
       }
-      if (item?.format === 'content') {
-        console.log('RERERERER');
-      } else {
-        console.log('QQQQQQQQQq');
-        console.log(item?.full);
+      if (item?.format === 'list' && item?.full !== undefined) {
+        list.push(item?.full);
+      }
+      if (item?.body && item?.body.length > 0) {
+        recursive(item.body);
       }
     };
     console.log('POPOPO');
@@ -278,6 +279,7 @@ const CollapsibleStory = forwardRef((props, ref) => {
           setInnerCollapseState
         );
       });
+    console.log('LIST', list);
   }, []);
 
   let indexes = [];
