@@ -248,16 +248,44 @@ const CollapsibleStory = forwardRef((props, ref) => {
   useEffect(() => {
     const list = [];
     const recursive = (item) => {
-      if (item.body && item.body.length) {
-        item?.body.map((i) => {
-          if (i.format === 'list') {
-            list.push(i?.full);
-            recursive(i?.body);
-          }
-          if (i.format === 'content') {
-            recursive(i?.body);
-          }
-        });
+      console.log('LOLOLLOLO');
+      // if (item?.body && item?.body.length) {
+      //   item?.body.map((i) => {
+      //     if (i.format === 'list') {
+      //       list.push(i?.full);
+      //       recursive(i?.body);
+      //     }
+      //     if (i.format === 'content') {
+      //       recursive(i?.body);
+      //     }
+      //   });
+      // }
+      try {
+        if (Array.isArray(item)) {
+          item?.map((i) => {
+            if (i.format === 'list') {
+              list.push(i?.full);
+              recursive(i?.body);
+            }
+            if (i.format === 'content') {
+              recursive(i?.body);
+            }
+          });
+        } else {
+          item?.body.map((i) => {
+            if (i.format === 'list') {
+              if (i?.body && i?.body?.length) {
+                list.push(i?.full);
+              }
+              recursive(i?.body);
+            }
+            if (i.format === 'content') {
+              recursive(i?.body);
+            }
+          });
+        }
+      } catch (e) {
+        console.log(e);
       }
     };
     detail &&
@@ -266,7 +294,11 @@ const CollapsibleStory = forwardRef((props, ref) => {
       detail?.map((item, idx1) => {
         recursive(item);
       });
-    console.log('LIST', list);
+    const obj = {};
+    list.forEach((item) => {
+      obj[item] = true;
+    });
+    setInnerCollapseState(obj);
   }, []);
 
   let indexes = [];
