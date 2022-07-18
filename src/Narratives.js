@@ -37,7 +37,8 @@ const Narratives = (props) => {
   const { toggleExpandAll } = useMainNarrativesContext();
   const { narrative } = props;
   const [whyStory, setWhyStory] = useState({});
-  const [expandAll, setExpandAll] = useState(undefined);
+  // const [expandAll, setExpandAll] = useState(undefined);
+  const [expandAll, setExpandAll] = useState(false);
   const [externalIds, setExternalIds] = useState([]);
   const indexes = [];
   // const refs = external?.length > 0 && externalIds.map((index) => useRef(null));
@@ -75,10 +76,10 @@ const Narratives = (props) => {
             <Button
               onClick={() => {
                 // console.log(collapseRef);
-                toggleExpandAll('expand');
+                setExpandAll(!expandAll);
               }}
             >
-              Expand All
+              {expandAll === true ? 'Collapse All' : 'Expand All'}
             </Button>
             <Fragment>
               {whyStory?.body &&
@@ -108,12 +109,11 @@ const Narratives = (props) => {
                                     title={innerItem.full}
                                     detail={innerItem?.body}
                                     index={idx}
-                                    expandAll={expandAll}
-                                    setExpandAll={setExpandAll}
                                     ref={(el) =>
                                       (collapseRef.current[idx] = el)
                                     }
                                     focusIndex={id}
+                                    expandAll
                                   />
                                 </Fragment>
                               );

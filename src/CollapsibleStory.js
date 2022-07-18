@@ -106,7 +106,7 @@ const AccordionDetails = styled(MuiAccordionDetails)(() => ({
 }));
 
 const CollapsibleStory = forwardRef((props, ref) => {
-  const { title, detail, index } = props;
+  const { title, detail, index, expandAll } = props;
   const [expanded, setExpanded] = useState(false);
   const [dynamicIndex, setDynamicIndex] = useState('');
   const [innerIndex, setInnerIndex] = useState('');
@@ -114,7 +114,7 @@ const CollapsibleStory = forwardRef((props, ref) => {
   const [innerCollapseState, setInnerCollapseState] = useState({});
   const [outerCollapseState, setOuterCollapseState] = useState({});
 
-  const { expandAll } = useMainNarrativesContext();
+  // const { expandAll } = useMainNarrativesContext();
 
   const handleChange = (event, isexpanded, index, focusIndex) => {
     console.log('triggered');
@@ -222,27 +222,33 @@ const CollapsibleStory = forwardRef((props, ref) => {
   };
 
   useEffect(() => {
+    console.log('EXOAD ALL');
+  }, [expandAll]);
+
+  useEffect(() => {
     // detail &&
     //   Array.isArray(detail) &&
     //   detail.length > 0 &&
     //   detail?.map((item, idx1) => {
     setOuterCollapseState({
       ...outerCollapseState,
-      [`${props.focusIndex}-${props.index}`]: true,
+      [`${props.focusIndex}-${props.index}`]: false,
     });
     // });
   }, []);
 
   useEffect(() => {
-    console.log('expandAll');
-    if (expandAll === true) {
-      console.log('expand all', expandAll, outerCollapseState);
-      const newOuterState = outerCollapseState;
-      Object.keys(newOuterState).map((key) => {
-        newOuterState[key] = false;
-      });
-      setOuterCollapseState(newOuterState);
-    }
+    console.log('expand all', outerCollapseState);
+    const newOuterState = outerCollapseState;
+    Object.keys(newOuterState).map((key) => {
+      newOuterState[key] = expandAll;
+    });
+    const newInnerCollapseState = innerCollapseState;
+    Object.keys(newInnerCollapseState).map((key) => {
+      newInnerCollapseState[key] = expandAll;
+    });
+    setInnerCollapseState(newInnerCollapseState);
+    setOuterCollapseState(newOuterState);
   }, [expandAll]);
 
   useEffect(() => {
