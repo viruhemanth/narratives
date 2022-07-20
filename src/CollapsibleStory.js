@@ -3,6 +3,7 @@ import React, {
   useEffect,
   forwardRef,
   useImperativeHandle,
+  useRef,
 } from 'react';
 import PropTypes from 'prop-types';
 import parse from 'html-react-parser';
@@ -28,6 +29,16 @@ import { useMainNarrativesContext } from './MainNarrativesContext';
 // import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 // import RemoveCircleOutlineIcon from '@material-ui/icons/RemoveCircleOutline';
 // import Tooltip from '@material-ui/core/Tooltip';
+
+import { useRef, useEffect } from 'react';
+
+export const useIsMount = () => {
+  const isMountRef = useRef(true);
+  useEffect(() => {
+    isMountRef.current = false;
+  }, []);
+  return isMountRef.current;
+};
 
 const CustomTypography = styled(Typography)(() => ({
   fontSize: '0.875rem',
@@ -106,15 +117,16 @@ const AccordionDetails = styled(MuiAccordionDetails)(() => ({
 }));
 
 const CollapsibleStory = forwardRef((props, ref) => {
-  const { title, detail, index, expandAll } = props;
+  const { expandAll } = useMainNarrativesContext();
+  const isMount = useIsMount();
+  const { title, detail, index } = props;
   const [expanded, setExpanded] = useState(false);
   const [dynamicIndex, setDynamicIndex] = useState('');
   const [innerIndex, setInnerIndex] = useState('');
   const [parentIndex, setParentIndex] = useState('');
   const [innerCollapseState, setInnerCollapseState] = useState({});
   const [outerCollapseState, setOuterCollapseState] = useState({});
-
-  // const { expandAll } = useMainNarrativesContext();
+  const [expandAlll, setExpandAll] = React.useState(expandAll);
 
   const handleChange = (event, isexpanded, index, focusIndex) => {
     console.log('triggered');
@@ -237,18 +249,26 @@ const CollapsibleStory = forwardRef((props, ref) => {
     // });
   }, []);
 
-  useEffect(() => {
+  function releaseTheKracken(expandedState) {
     console.log('expand all', outerCollapseState);
     const newOuterState = outerCollapseState;
     Object.keys(newOuterState).map((key) => {
-      newOuterState[key] = expandAll;
+      newOuterState[key] = expandedState;
     });
     const newInnerCollapseState = innerCollapseState;
     Object.keys(newInnerCollapseState).map((key) => {
-      newInnerCollapseState[key] = expandAll;
+      newInnerCollapseState[key] = expandedState;
     });
-    setInnerCollapseState(newInnerCollapseState);
-    setOuterCollapseState(newOuterState);
+    setInnerCollapseState({ ...newInnerCollapseState });
+    setOuterCollapseState({ ...newOuterState });
+  }
+
+  useEffect(() => {
+    if (isMount) {
+    } else {
+      console.log('PSYCHO', expandAll);
+      releaseTheKracken(expandAll);
+    }
   }, [expandAll]);
 
   useEffect(() => {

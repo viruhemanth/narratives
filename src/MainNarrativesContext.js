@@ -11,8 +11,6 @@ function MainNarrativesContextProvider({ children }) {
   const toggleExpandAll = (type) => {
     if (type === 'expand') {
       setExpandAll(!expandAll);
-      console.log('Hello');
-      console.log(expandAll);
     } else {
       setExpandAll(false);
     }

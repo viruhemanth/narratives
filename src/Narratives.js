@@ -34,11 +34,11 @@ const CustomBox = styled(Box)(() => ({
 const Narratives = (props) => {
   // const collapseRef = useRef(null);
   const collapseRef = useRef([]);
-  const { toggleExpandAll } = useMainNarrativesContext();
+  const { toggleExpandAll, expandAll } = useMainNarrativesContext();
   const { narrative } = props;
   const [whyStory, setWhyStory] = useState({});
   // const [expandAll, setExpandAll] = useState(undefined);
-  const [expandAll, setExpandAll] = useState(false);
+  // const [expandAll, setExpandAll] = useState(false);
   const [externalIds, setExternalIds] = useState([]);
   const indexes = [];
   // const refs = external?.length > 0 && externalIds.map((index) => useRef(null));
@@ -76,7 +76,10 @@ const Narratives = (props) => {
             <Button
               onClick={() => {
                 // console.log(collapseRef);
-                setExpandAll(!expandAll);
+                // setExpandAll(!expandAll);
+                expandAll === 'true'
+                  ? toggleExpandAll('collapse')
+                  : toggleExpandAll('expand');
               }}
             >
               {expandAll === true ? 'Collapse All' : 'Expand All'}
