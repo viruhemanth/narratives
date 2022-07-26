@@ -117,15 +117,21 @@ const AccordionDetails = styled(MuiAccordionDetails)(() => ({
 }));
 
 const CollapsibleStory = forwardRef((props, ref) => {
-  const { expandAll } = useMainNarrativesContext();
+  const {
+    expandAll,
+    outerCollapseState,
+    setOuterCollapseState,
+    innerCollapseState,
+    setInnerCollapseState,
+  } = useMainNarrativesContext();
   const isMount = useIsMount();
   const { title, detail, index } = props;
   const [expanded, setExpanded] = useState(false);
   const [dynamicIndex, setDynamicIndex] = useState('');
   const [innerIndex, setInnerIndex] = useState('');
   const [parentIndex, setParentIndex] = useState('');
-  const [innerCollapseState, setInnerCollapseState] = useState({});
-  const [outerCollapseState, setOuterCollapseState] = useState({});
+  // const [innerCollapseState, setInnerCollapseState] = useState({});
+  // const [outerCollapseState, setOuterCollapseState] = useState({});
   const [expandAlll, setExpandAll] = React.useState(expandAll);
 
   const handleChange = (event, isexpanded, index, focusIndex) => {
@@ -290,8 +296,10 @@ const CollapsibleStory = forwardRef((props, ref) => {
         if (Array.isArray(item)) {
           item?.map((i) => {
             if (i.format === 'list') {
-              list.push(i?.full);
-              recursive(i?.body);
+              if (i?.body && Array.isArray(i?.body)) {
+                list.push(i?.full);
+                recursive(i?.body);
+              }
             }
             if (i.format === 'content') {
               recursive(i?.body);
@@ -329,7 +337,7 @@ const CollapsibleStory = forwardRef((props, ref) => {
 
   let indexes = [];
 
-  console.log(indexes);
+  console.log(outerCollapseState);
 
   return (
     <>
