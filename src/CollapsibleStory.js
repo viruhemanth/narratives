@@ -238,14 +238,14 @@ const CollapsibleStory = forwardRef((props, ref) => {
   }, [expandAll]);
 
   useEffect(() => {
-    // detail &&
-    //   Array.isArray(detail) &&
-    //   detail.length > 0 &&
-    //   detail?.map((item, idx1) => {
-    setOuterCollapseState({
-      ...outerCollapseState,
-      [`${props.focusIndex}-${props.index}`]: false,
-    });
+    // Setting Outer CollapseState
+    console.log('inner item', props.item);
+    if (props.item?.body !== undefined && Array.isArray(props?.item?.body)) {
+      setOuterCollapseState({
+        ...outerCollapseState,
+        [`${props.focusIndex}-${props.index}`]: false,
+      });
+    }
     // });
   }, []);
 

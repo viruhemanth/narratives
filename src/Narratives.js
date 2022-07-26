@@ -112,6 +112,7 @@ const Narratives = (props) => {
                                     title={innerItem.full}
                                     detail={innerItem?.body}
                                     index={idx}
+                                    item={innerItem}
                                     ref={(el) =>
                                       (collapseRef.current[idx] = el)
                                     }
